@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Gerry Shaw"]
   spec.email         = ["gerry_shaw@yahoo.com"]
   spec.summary       = %q{Alternate logging for Rails production servers}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/gshaw/concise_logging"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
