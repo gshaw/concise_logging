@@ -1,5 +1,3 @@
 require "concise_logging/version"
-
-module ConciseLogging
-  # Your code goes here...
-end
+require "concise_logging/log_middleware"
+require "concise_logging/log_subscriber"

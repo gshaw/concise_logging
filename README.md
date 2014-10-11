@@ -1,6 +1,6 @@
 # ConciseLogging
 
-TODO: Write a gem description
+Alternate logging for Rails production servers
 
 ## Installation
 
@@ -20,7 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this to your `config/production.rb`.  Configure tagging as per your desires.
+
+````ruby
+config.middleware.use "ConciseLogging::LogMiddleware"
+ConciseLogging::LogSubscriber.attach_to :action_controller
+
+config.log_level = :warn
+config.log_tags = ["cv-#{Rails.env[0]}"]
+config.logger = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(File.join(Rails.root, "log", "#{Rails.env}.log")))
+````
 
 ## Contributing
 

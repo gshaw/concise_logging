@@ -7,9 +7,8 @@ Gem::Specification.new do |spec|
   spec.name          = "concise_logging"
   spec.version       = ConciseLogging::VERSION
   spec.authors       = ["Gerry Shaw"]
-  spec.email         = ["gshaw@venturemedia.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["gerry_shaw@yahoo.com"]
+  spec.summary       = %q{Alternate logging for Rails production servers}
   spec.homepage      = ""
   spec.license       = "MIT"
 
