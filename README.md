@@ -40,14 +40,9 @@ We use tagging to indicate application with a 2 letter code and environment with
 a single letter (e.g., p = production, s = staging).
 
 ````ruby
-# Add log subscriber to generate concise request messages at warning level
-config.middleware.use "ConciseLogging::LogMiddleware"
-ConciseLogging::LogSubscriber.attach_to :action_controller
-
-# Configure logger to log warn and above to Papertrail app vis syslog
+# Configure logger to log warn and above
 config.log_level = :warn
 config.log_tags = ["cv-#{Rails.env[0]}"]
-config.colorize_logging = true
 config.logger = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(File.join(Rails.root, "log", "#{Rails.env}.log")))
 ````
 
