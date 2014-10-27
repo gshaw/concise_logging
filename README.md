@@ -39,12 +39,21 @@ Add this to your `config/production.rb`.  Configure tagging as per your desires.
 We use tagging to indicate application with a 2 letter code and environment with
 a single letter (e.g., p = production, s = staging).
 
-````ruby
+```ruby
 # Configure logger to log warn and above
 config.log_level = :warn
 config.log_tags = ["cv-#{Rails.env[0]}"]
 config.logger = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(File.join(Rails.root, "log", "#{Rails.env}.log")))
-````
+```
+
+If you want to try the logger in development than you have to manually add the
+middleware and attach the log subscriber by adding these lines in your
+`config/development.rb` file.  These lines are not needed for production.
+
+```ruby
+Rails.application.middleware.use ConciseLogging::LogMiddleware
+ConciseLogging::LogSubscriber.attach_to :action_controller
+```
 
 ## Contributing
 
