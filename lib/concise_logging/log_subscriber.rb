@@ -26,7 +26,7 @@ module ConciseLogging
         ip: format("%-15s", ip),
         method: format_method(format("%-6s", method)),
         status: format_status(status),
-        path: path
+        path: color(path, BOLD)
       )
       message << " redirect_to=#{location}" if location.present?
       message << " parameters=#{params}" if params.present?
