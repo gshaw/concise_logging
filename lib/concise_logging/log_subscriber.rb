@@ -26,12 +26,13 @@ module ConciseLogging
         ip: format("%-15s", ip),
         method: format_method(format("%-6s", method)),
         status: format_status(status),
-        path: path
+        path: color(path, BOLD)
       )
       message << " redirect_to=#{location}" if location.present?
       message << " parameters=#{params}" if params.present?
       message << " #{color(exception_details, RED)}" if exception_details.present?
       message << " (app:#{app}ms db:#{db}ms)"
+      message << " #{payload[:response_body].inspect}" if payload[:response_body].present?
 
       logger.warn message
     end

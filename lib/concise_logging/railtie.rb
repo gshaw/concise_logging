@@ -6,6 +6,16 @@ module ConciseLogging
       end
 
       ConciseLogging::LogSubscriber.attach_to :action_controller
+
+      config.after_initialize do
+        ActiveSupport.on_load(:action_controller) do
+          # Lazily load action_controller methods
+          #
+          require 'concise_logging/controller_runtime'
+
+          include ConciseLogging::ControllerRuntime if ConciseLogging.configuration.log_response
+        end
+      end
     end
   end
 end
