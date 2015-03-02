@@ -32,6 +32,7 @@ module ConciseLogging
       message << " parameters=#{params}" if params.present?
       message << " #{color(exception_details, RED)}" if exception_details.present?
       message << " (app:#{app}ms db:#{db}ms)"
+      message << " #{payload[:response_body].inspect}" if payload[:response_body].present?
 
       logger.warn message
     end
