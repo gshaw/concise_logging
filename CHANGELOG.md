@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.1 / Jun 1, 2016
+
+* Allow usage by Rails 5
+
 ## 1.0.0 / Feb 10, 2015
 
 * Add IP option for X-REAL-IP (@konsti)
