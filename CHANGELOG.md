@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.0 / Nov 14, 2016
+
+* Reduce dependency footprint.
+
 ## 1.0.1 / Jun 1, 2016
 
 * Allow usage by Rails 5
