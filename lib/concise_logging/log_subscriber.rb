@@ -1,3 +1,5 @@
+require "active_support"
+
 module ConciseLogging
   class LogSubscriber < ActiveSupport::LogSubscriber
     INTERNAL_PARAMS = %w(controller action format _method only_path)
